@@ -5,7 +5,7 @@
 		"dev": "dojo build app -m dev -w -s",
 		"build": "npm-run-all -s clean build:**",
 		"build:prepare": "shx mkdir .temp-dist && shx mkdir .temp-dist/@dojo",
-		"build:ce": "dojo build widget -m dev && shx cp -r output/dev .temp-dist/",
+		"build:ce": "dojo build widget && shx cp -r output/dist .temp-dist/",
 		"build:meta": "shx cp package.json .temp-dist && shx cp README.md .temp-dist",
 		"build:dojo:widget": "shx cp -rf node_modules/@dojo/widgets .temp-dist/@dojo",
 		"build:finalize": "shx rm -rf output/dist && shx mv .temp-dist/ output/dist",
