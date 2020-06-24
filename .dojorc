@@ -1,0 +1,10 @@
+{
+	"extends": "./node_modules/@dojo/parade/parade.json",
+	"build-widget": {
+		"prefix": "dojo",
+		"widgets": []
+	},
+	"build-app": {},
+	"test-intern": {},
+	"create-widget": {}
+}
