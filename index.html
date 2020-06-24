@@ -4,6 +4,10 @@
 		<title>Dojo Weather Workshop</title>
 		<meta name="theme-color" content="#222127">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./output/dist/dist/weather-1.0.0.css"/>
+		<link rel="stylesheet" href="./output/dist/@dojo/widgets/theme/dojo/dojo-7.0.0.css">
+		<link rel="stylesheet" href="./output/dist/@dojo/widgets/theme/material/material-7.0.0.css">
+		<link rel="stylesheet" href="./output/dist/@dojo/widgets/dist/button-7.0.0.css">
 		<style>
 			body {
 				margin: 0;
@@ -19,5 +23,44 @@
 		</style>
 	</head>
 	<body>
+		<script src="./output/dist/@dojo/widgets/theme/dojo/dojo-7.0.0.js"></script>
+		<script src="./output/dist/@dojo/widgets/theme/material/material-7.0.0.js"></script>
+		<script src="./output/dist/@dojo/widgets/dist/button-7.0.0.js"></script>
+		<dojo-button id="readonly">Toggle Readonly</dojo-button>
+		<dojo-button id="populate">Populate Locations</dojo-button>
+		<dojo-button id="theme">Toggle Theme</dojo-button>
+		<dojo-button id="variant">Toggle Variant</dojo-button>
+		<div class="container">
+			<dojo-weather id="weather" readonly=true></dojo-weather>
+		</div>
+		<script>
+
+			variant.addEventListener('click', () => {
+				if (dojoce.variant === 'dark') {
+					document.body.style = "";
+					dojoce.variant = 'default';
+				} else {
+					document.body.style = "background: #121212;";
+					dojoce.variant = 'dark';
+				}
+			});
+			theme.addEventListener('click', () => {
+				if (dojoce.theme === 'dojo') {
+					dojoce.theme = 'material';
+				} else {
+					dojoce.theme = 'dojo';
+				}
+			});
+			readonly.addEventListener('click', () => {
+				weather.readonly = !weather.readonly;
+			});
+			populate.addEventListener('click', () => {
+				weather.locations = ['London', 'Paris'];
+			});
+			weather.addEventListener('change', ({ detail }) => {
+				weather.locations = detail[0];
+			})
+		</script>
+		<script async src="./output/dist/dist/weather-1.0.0.js"></script>
 	</body>
 </html>

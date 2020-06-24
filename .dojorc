@@ -2,7 +2,9 @@
 	"extends": "./node_modules/@dojo/parade/parade.json",
 	"build-widget": {
 		"prefix": "dojo",
-		"widgets": []
+		"widgets": [
+			"src/weather/Weather"
+		]
 	},
 	"build-app": {},
 	"test-intern": {},
