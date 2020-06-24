@@ -1,6 +1,7 @@
 import material from '@dojo/widgets/theme/material';
 
 import BasicWeather from './weather/BasicWeather';
+import ReadonlyWeather from './weather/ReadonlyWeather';
 
 `!has('docs')`;
 import testsContext from './tests';
@@ -24,7 +25,14 @@ export const config = {
 					filename: 'BasicWeather',
 					module: BasicWeather
 				}
-			}
+			},
+			examples: [
+				{
+					title: 'Readonly Weather',
+					filename: 'ReadonlyWeather',
+					module: ReadonlyWeather
+				}
+			]
 		}
 	}
 };
